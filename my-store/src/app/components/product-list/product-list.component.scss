@@ -1,0 +1,22 @@
+.product-list {
+  &__header {
+    padding: 8px 0;
+    color: white;
+    text-align: center;
+    background-color: rgb(31, 76, 224);
+    &--menu {
+      span {
+        margin-right: 8px;
+        &:hover {
+          font-weight: bold;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__body {
+    margin: 24px auto;
+    width: 1260px;
+  }
+}
