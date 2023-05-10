@@ -1,6 +1,5 @@
-<select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+<select class="selectbox" (change)="onChange($event)">
+  <ng-container *ngFor="let option of options">
+    <option value={{option.value}}>{{option.name}}</option>
+  </ng-container>
 </select>

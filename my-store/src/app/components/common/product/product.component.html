@@ -3,9 +3,13 @@
     <img src="https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg">
   </div>
   <div class="product__detail">
-    <h1 class="product__detail--type">Book</h1>
-    <div class="product__detail--price">$ 12321</div>
-    <app-selectbox></app-selectbox>
-    <app-button (click)="onAddToCart()" [label]="'Add to Card'"></app-button>
+    <label class="product__detail--type">Book</label>
+    <div class="product__detail--price my-2">$12321</div>
+    <div class="my-2">
+      <app-selectbox [options]="listOptions" (change)="onChange($event)"></app-selectbox>
+    </div>
+    <div class="my-2">
+      <app-button (click)="onAddToCart()" [label]="'Add to Card'"></app-button>
+    </div>
   </div>
 </div>

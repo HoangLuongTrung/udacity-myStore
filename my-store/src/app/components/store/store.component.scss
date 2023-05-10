@@ -1,4 +1,4 @@
-.product-list {
+.store {
   &__header {
     padding: 8px 0;
     color: white;
@@ -17,6 +17,6 @@
   }
   &__body {
     margin: 24px auto;
-    width: 1260px;
+    width: calc(100vw - 300px);
   }
 }

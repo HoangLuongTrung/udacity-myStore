@@ -1,0 +1,11 @@
+.selectbox {
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  outline: none;
+  min-width: 90px;
+  &:focus {
+    border-color: #0b0bff;
+  }
+}

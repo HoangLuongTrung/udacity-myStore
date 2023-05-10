@@ -12,7 +12,11 @@
   &__detail {
     text-align: center;
     &--type {
-
+      margin-top: 8px;
+      font-size: 24px;
+    }
+    &--price {
+      font-weight: 600;
     }
   }
 }
