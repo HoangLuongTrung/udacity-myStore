@@ -8,10 +8,12 @@ import { Selectbox } from 'src/app/models/product.model';
 })
 export class SelectboxComponent {
   @Input() options: Selectbox[] = [];
-  @Output() change = new EventEmitter<Number>();
+  @Output() selectItem = new EventEmitter<number>();
+  selected = 1;
   constructor() { }
 
-  onChange(event: any) {
-    this.change.emit(event.target.value)
+  onChange(value: number) {
+    this.selected = value;
+    this.selectItem.emit(this.selected);
   }
 }

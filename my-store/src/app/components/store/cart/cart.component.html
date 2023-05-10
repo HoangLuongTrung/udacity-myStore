@@ -1,1 +1,28 @@
-<p>cart works!</p>
+<div class="cart row">
+  <div class="cart__selected">
+    <app-product-added></app-product-added>
+    <div class="cart__selected--total">
+      Total: $231.32
+    </div>
+  </div>
+  <div class="cart__infor col-6">
+    <div class="cart__infor--row">
+      <label>Full name</label>
+      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+    </div>
+    <div class="cart__infor--row">
+      <label>Address</label>
+      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+    </div>
+    <div class="cart__infor--row">
+      <label>Credit card number</label>
+      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+    </div>
+    <div class="cart__infor--row">
+      <p>We'll never share your payment details with anyone else</p>
+    </div>
+    <div class="cart__infor--row">
+      <app-button [label]="'Submit'"></app-button>
+    </div>
+  </div>
+</div>

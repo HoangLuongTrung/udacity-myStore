@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-store',
@@ -8,12 +8,9 @@ import { Router } from '@angular/router';
 })
 export class StoreComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onNavigate(url: string) {
-    this.router.navigateByUrl(url);
+ 
   }
 }

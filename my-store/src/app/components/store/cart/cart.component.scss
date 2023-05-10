@@ -1,0 +1,14 @@
+.cart {
+  &__selected {
+
+  }
+  &__infor {
+    &--row {
+      margin-bottom: 16px;
+      label {
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

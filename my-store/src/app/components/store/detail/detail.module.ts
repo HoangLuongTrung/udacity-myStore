@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailComponent } from './detail.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SelectboxModule } from '../../common/selectbox/selectbox.module';
+import { ButtonModule } from '../../common/button/button.module';
 
 const routes: Routes = [
   {
@@ -16,6 +18,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    ButtonModule,
+    SelectboxModule,
     RouterModule.forChild(routes)
   ]
 })

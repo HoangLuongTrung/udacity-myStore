@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectboxComponent } from './selectbox.component';
+import { InputComponent } from './input.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    SelectboxComponent
+    InputComponent
   ],
   imports: [
     CommonModule,
-    FormsModule      
+    FormsModule
   ],
   exports: [
-    SelectboxComponent
+    InputComponent
   ]
 })
-export class SelectboxModule { }
+export class InputModule { }

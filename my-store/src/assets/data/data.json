@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "Book",
+      "price": 1000,
+      "image": "",
+      "description": "description"
+    },
+    {
+      "id": 2,
+      "type": "Phone",
+      "price": 2000,
+      "image": "",
+      "description": "description"
+    },
+    {
+      "id": 3,
+      "type": "Book",
+      "price": 1000,
+      "image": "",
+      "description": "description"
+    },
+    {
+      "id": 4,
+      "type": "Phone",
+      "price": 2000,
+      "image": "",
+      "description": "description"
+    },
+    {
+      "id": 5,
+      "type": "Book",
+      "price": 1000,
+      "image": "",
+      "description": "description"
+    },
+    {
+      "id": 6,
+      "type": "Phone",
+      "price": 2000,
+      "image": "",
+      "description": "description"
+    }
+  ],
+  "isSuccess": true
+}

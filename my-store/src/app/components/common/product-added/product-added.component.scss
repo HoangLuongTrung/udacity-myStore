@@ -1,0 +1,20 @@
+.product-added {
+  &__infor {
+    margin: auto 0;
+    width: 300px;
+    &--amount {
+      label {
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &__image {
+    text-align: center;
+    width: 400px;
+    img {
+      width: 50%;
+    }
+  }
+}

@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductAddedModule } from '../../common/product-added/product-added.module';
+import { InputModule } from '../../common/input/input.module';
+import { ButtonModule } from '../../common/button/button.module';
 
 const routes: Routes = [
   {
@@ -16,7 +19,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ProductAddedModule,
+    InputModule,
+    ButtonModule
   ]
 })
 export class CartModule { }

@@ -1,0 +1,11 @@
+.input {
+  &__custom {
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 4px  ;
+    &:hover {
+      border-color: #0b0bff;
+    }    
+  }
+}

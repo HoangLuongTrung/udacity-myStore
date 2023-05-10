@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { NumberOrder } from 'src/app/constants/common.constants';
 import { Selectbox } from 'src/app/models/product.model';
 
@@ -7,19 +8,22 @@ import { Selectbox } from 'src/app/models/product.model';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
-  listOptions: Selectbox[] = [];
-  constructor() { }
+export class ProductComponent {
+  @Input() product: any;
+  listOptions: Selectbox[] = NumberOrder;
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    this.listOptions = NumberOrder;
-  }
+  ngOnInit(): void {}
 
   onAddToCart() {
     console.log('bbbb');
   }
 
-  onChange(value: any) {
+  onChange(value: number) {
     console.log(value);
+  }
+
+  onViewDetail(id: number) {
+    this.router.navigateByUrl(`store/detail/${id}`)
   }
 }
