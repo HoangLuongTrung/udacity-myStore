@@ -1,4 +1,4 @@
 <div class="input">
   <input class="input__custom" [min]="1" [max]="10" [type]="type" [placeholder]="placeholder" [(ngModel)]="data"
-    (ngModelChange)="onChange()" />
+    (ngModelChange)="onChangeValue($event)" />
 </div>

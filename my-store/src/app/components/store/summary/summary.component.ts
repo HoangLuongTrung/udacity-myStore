@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-summary',
@@ -7,10 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  fullName = '';
+  total = 0;
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.dataSummary$.subscribe(res => {
+      if (res) {
+        this.fullName = res.fullName;
+        this.total = res.total;
+      } else {
+        this.router.navigateByUrl('store/list')
+      }
+    })
   }
 
   onNavigate() {

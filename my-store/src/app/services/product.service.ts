@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Product, ResponseProduct } from '../models/product.model';
+import { DataSummary, Product, ResponseProduct } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,10 @@ import { Product, ResponseProduct } from '../models/product.model';
 export class ProductService {
   private _productAdded = new BehaviorSubject<Product | null>(null);
   productAdded$ = new BehaviorSubject<Product | null>(null);
+
+  private _dataSummary = new BehaviorSubject<DataSummary | null>(null);
+  dataSummary$ = this._dataSummary.asObservable();
+
   private _product = new BehaviorSubject<Product | null>(null);
   product$ = this._product.asObservable();
   listProduct: Product[] = [];
@@ -28,5 +32,9 @@ export class ProductService {
 
   private setListProduct(product: Product): any {
     return this.listProduct.push(product);
+  }
+
+  setDataSummary(data: DataSummary): void {
+    return this._dataSummary.next(data);
   }
 }

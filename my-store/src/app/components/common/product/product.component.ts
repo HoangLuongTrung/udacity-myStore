@@ -18,6 +18,7 @@ export class ProductComponent {
 
   onAddToCart() {
     this.productService.productAddedToCart(this.product);
+    alert('Added to cart success!');
   }
 
   onChange(value: number) {

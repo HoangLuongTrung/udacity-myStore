@@ -6,23 +6,27 @@
     <div class="row">
       <div class="col-6"></div>
       <div class="cart__selected--total col-6">
-        Total:  ${{total}}
+        Total: ${{total}}
       </div>
     </div>
   </div>
   <div class="cart__infor col-6">
     <div class="cart__infor--row">
       <label>Full name</label>
-      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+      <app-input [type]="'text'" [(ngModel)]="fullName" [placeholder]="'Minumum 3 characters'"></app-input>
     </div>
+    <p class="cart__infor--error" *ngIf="isSubmit && fullName.length < 3">Full name is invalid</p>
     <div class="cart__infor--row">
       <label>Address</label>
-      <app-input [type]="'text'" [placeholder]="'Minumum 6 characters'"></app-input>
+      <app-input [type]="'text'" [(ngModel)]="address" [placeholder]="'Minumum 6 characters'"></app-input>
     </div>
+    <p class="cart__infor--error" *ngIf="isSubmit && address.length < 6">Full name is invalid</p>
     <div class="cart__infor--row">
       <label>Credit card number</label>
-      <app-input-number [maxlength]="16" [placeholder]="'(16-digit number)'"></app-input-number>
+      <app-input-number [maxlength]="16" [(ngModel)]="cardCredit"
+        [placeholder]="'(16-digit number)'"></app-input-number>
     </div>
+    <p class="cart__infor--error" *ngIf="isSubmit && cardCredit.length < 16">Credit card number is invalid</p>
     <div class="cart__infor--row">
       <p>We'll never share your payment details with anyone else</p>
     </div>

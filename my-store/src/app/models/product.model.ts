@@ -16,3 +16,8 @@ export interface Product {
   image: string;
   quantity: number;
 }
+
+export interface DataSummary {
+  total: number;
+  fullName: string;
+}

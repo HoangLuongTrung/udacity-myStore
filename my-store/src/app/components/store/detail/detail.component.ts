@@ -31,10 +31,11 @@ export class DetailComponent implements OnInit {
   }
 
   onAddToCart() {
-    console.log('bbbb');
+    this.productService.productAddedToCart(this.product);
+    alert('Added to cart success!');
   }
 
   onChange(value: number) {
-    console.log(value);
+    this.product.quantity = +value;
   }
 }

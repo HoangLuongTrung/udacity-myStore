@@ -6,6 +6,7 @@ import { ProductAddedModule } from '../../common/product-added/product-added.mod
 import { InputModule } from '../../common/input/input.module';
 import { ButtonModule } from '../../common/button/button.module';
 import { InputNumberModule } from '../../common/input-number/input-number.module';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     ProductAddedModule,
     InputModule,
     ButtonModule,
-    InputNumberModule
+    InputNumberModule,
+    FormsModule
   ]
 })
 export class CartModule { }

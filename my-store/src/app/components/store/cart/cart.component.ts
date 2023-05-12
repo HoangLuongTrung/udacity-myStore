@@ -12,6 +12,10 @@ import _ from "lodash";
 export class CartComponent implements OnInit {
   listProduct: Product[];
   total = 0;
+  fullName = '';
+  address = '';
+  cardCredit = '';
+  isSubmit = false;
   constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -23,16 +27,31 @@ export class CartComponent implements OnInit {
 
     this.productService.listProduct = this.listProduct;
 
-    this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price)*cur.quantity, 0)
+    this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price) * cur.quantity, 0)
   }
   onSubmit(): void {
-    this.router.navigateByUrl('store/summary')
+    this.isSubmit = true;
+    if (!this.isValid()) {
+      return; 
+    }
+    this.router.navigateByUrl('store/summary');
+    this.productService.setDataSummary({
+      total: this.total,
+      fullName: this.fullName
+    });
+    this.productService.listProduct = [];
   }
 
-  onChange(value: string| number, product: Product) {
+  onChange(value: string | number, product: Product) {
     product.quantity = +value;
-    this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price)*cur.quantity, 0)
-    
+    this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price) * cur.quantity, 0)
+  }
+
+  isValid(): boolean {
+    const isValidFullName = this.fullName.length >= 3;
+    const isValidAddress = this.address.length >= 6;
+    const isValidCreditCard = this.cardCredit.length === 16;
+    return isValidAddress && isValidFullName && isValidCreditCard;
   }
 
   private formatProductAdded(products: Product[]): Product[] {
@@ -47,4 +66,6 @@ export class CartComponent implements OnInit {
     }, [])
     return data;
   }
+
+
 }
