@@ -1,7 +1,14 @@
 .product-added {
   &__infor {
     margin: auto 0;
-    width: 300px;
+    &--type {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    &--price {
+      font-weight: 600;
+      font-size: 20px;
+    }
     &--amount {
       label {
         margin-right: 16px;
@@ -12,9 +19,9 @@
   }
   &__image {
     text-align: center;
-    width: 400px;
     img {
       width: 50%;
+      height: 200px;
     }
   }
 }

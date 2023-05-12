@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NumberOrder } from 'src/app/constants/common.constants';
-import { Selectbox } from 'src/app/models/product.model';
+import { Product, Selectbox } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -9,21 +10,22 @@ import { Selectbox } from 'src/app/models/product.model';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  @Input() product: any;
+  @Input() product: Product;
   listOptions: Selectbox[] = NumberOrder;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {}
 
   onAddToCart() {
-    console.log('bbbb');
+    this.productService.productAddedToCart(this.product);
   }
 
   onChange(value: number) {
-    console.log(value);
+    this.product.quantity = value;
   }
 
-  onViewDetail(id: number) {
-    this.router.navigateByUrl(`store/detail/${id}`)
+  onViewDetail(product: Product) {
+    this.productService.setProduct(product);
+    this.router.navigateByUrl(`store/detail/${product.id}`)
   }
 }

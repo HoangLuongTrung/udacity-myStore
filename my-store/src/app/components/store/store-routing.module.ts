@@ -31,6 +31,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('../store/summary/summary.module').then(m => m.SummaryModule)
       },
+      {
+        path: 'not-found',
+        loadChildren: () =>
+          import('../store/not-found/not-found.module').then(m => m.NotFoundModule)
+      },
     ]
   }
 ];

@@ -1,11 +1,11 @@
 <div class="detail row">
   <div class="detail__image col-6">
-    <img src="https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg">
+    <img src={{product?.image}}>
   </div>
   <div class="detail__infor col-6">
-    <label class="detail__infor--type">AAA</label>
-    <div class="detail__infor--price my-2">$3232</div>
-    <div class="detail__infor--description my-2">AAAAAAAAAAAAAAAAAAAA</div>
+    <label class="detail__infor--type">{{product?.type}}</label>
+    <div class="detail__infor--price my-2">${{product?.price}}</div>
+    <div class="detail__infor--description my-2">{{product?.description}}</div>
     <div class="my-2">
       <app-selectbox [options]="listOptions" (selectItem)="onChange($event)"></app-selectbox>
     </div>

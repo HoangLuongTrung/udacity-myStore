@@ -1,13 +1,13 @@
 <div class="product-added row">
-  <div class="product-added__image">
-    <img src="https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg">
+  <div class="product-added__image col-6">
+    <img src={{product?.image}}>
   </div>
-  <div class="product-added__infor column">
-    <div class="product-added__infor--type">Book</div>
-    <div class="product-added__infor--price">$312</div>
-    <div class="product-added__infor--amount d-flex">
+  <div class="product-added__infor col-6 column">
+    <div class="product-added__infor--type my-2">{{product?.type}}</div>
+    <div class="product-added__infor--price my-2">${{product?.price}}</div>
+    <div class="product-added__infor--amount d-flex my-2">
       <label>Amount: </label>
-      <app-input [type]="'number'"></app-input>
+      <app-input [type]="'number'" [data]=product?.quantity (valueChange)="onChange($event)"></app-input>
     </div>
   </div>
 </div>

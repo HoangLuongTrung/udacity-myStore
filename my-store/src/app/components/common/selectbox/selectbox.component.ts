@@ -13,7 +13,6 @@ export class SelectboxComponent {
   constructor() { }
 
   onChange(value: number) {
-    this.selected = value;
-    this.selectItem.emit(this.selected);
+    this.selectItem.emit(+value);
   }
 }

@@ -1,6 +1,6 @@
 <div class="product">
-  <div class="product__image" (click)="onViewDetail(product.id)">
-    <img src="https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg">
+  <div class="product__image" (click)="onViewDetail(product)">
+    <img src={{product.image}}>
   </div>
   <div class="product__detail">
     <label class="product__detail--type">{{product.type}}</label>
@@ -9,7 +9,7 @@
       <app-selectbox [options]="listOptions" (selectItem)="onChange($event)"></app-selectbox>
     </div>
     <div class="my-2">
-      <app-button (click)="onAddToCart()" [label]="'Add to Card'"></app-button>
+      <app-button (btnClick)="onAddToCart()" [label]="'Add to Card'"></app-button>
     </div>
   </div>
 </div>

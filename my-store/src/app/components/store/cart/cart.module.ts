@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductAddedModule } from '../../common/product-added/product-added.module';
 import { InputModule } from '../../common/input/input.module';
 import { ButtonModule } from '../../common/button/button.module';
+import { InputNumberModule } from '../../common/input-number/input-number.module';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ProductAddedModule,
     InputModule,
-    ButtonModule
+    ButtonModule,
+    InputNumberModule
   ]
 })
 export class CartModule { }

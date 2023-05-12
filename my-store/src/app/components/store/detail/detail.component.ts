@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { log } from 'console';
 import { NumberOrder } from 'src/app/constants/common.constants';
-import { Selectbox } from 'src/app/models/product.model';
+import { Product, Selectbox } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-detail',
@@ -10,11 +12,23 @@ import { Selectbox } from 'src/app/models/product.model';
 })
 export class DetailComponent implements OnInit {
   listOptions: Selectbox[] = NumberOrder;
-  constructor(private activatedRoute: ActivatedRoute) {
+  id = 0;
+  product: Product;
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router) {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (id && +id > 0) {
+      this.id = +id;
+    }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productService.product$.subscribe(x => {
+      this.product = x;
+    })
+    if (!this.product) {
+      this.router.navigateByUrl('store/list');
+    }
+  }
 
   onAddToCart() {
     console.log('bbbb');

@@ -12,12 +12,10 @@ export class ListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.getListProduct().subscribe(x => {
-      console.log(x.isSuccess);
-      if(x.isSuccess) {
-        this.listProduct = x.data;
+    this.productService.getListProduct().subscribe(res => {
+      if(res.isSuccess) {
+        this.listProduct = res.data;
       }
     })
   }
-
 }

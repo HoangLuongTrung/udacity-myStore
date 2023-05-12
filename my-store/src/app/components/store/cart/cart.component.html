@@ -1,8 +1,13 @@
 <div class="cart row">
-  <div class="cart__selected">
-    <app-product-added></app-product-added>
-    <div class="cart__selected--total">
-      Total: $231.32
+  <div class="cart__selected col-6">
+    <div class="my-2" *ngFor="let product of listProduct">
+      <app-product-added [product]="product" (valueChange)="onChange($event, product)"></app-product-added>
+    </div>
+    <div class="row">
+      <div class="col-6"></div>
+      <div class="cart__selected--total col-6">
+        Total:  ${{total}}
+      </div>
     </div>
   </div>
   <div class="cart__infor col-6">
@@ -12,17 +17,17 @@
     </div>
     <div class="cart__infor--row">
       <label>Address</label>
-      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+      <app-input [type]="'text'" [placeholder]="'Minumum 6 characters'"></app-input>
     </div>
     <div class="cart__infor--row">
       <label>Credit card number</label>
-      <app-input [type]="'text'" [placeholder]="'Minumum 3 characters'"></app-input>
+      <app-input-number [maxlength]="16" [placeholder]="'(16-digit number)'"></app-input-number>
     </div>
     <div class="cart__infor--row">
       <p>We'll never share your payment details with anyone else</p>
     </div>
     <div class="cart__infor--row">
-      <app-button [label]="'Submit'"></app-button>
+      <app-button [label]="'Submit'" (click)="onSubmit()"></app-button>
     </div>
   </div>
 </div>

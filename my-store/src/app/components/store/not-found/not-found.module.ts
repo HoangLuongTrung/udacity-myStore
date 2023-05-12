@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SummaryComponent } from './summary.component';
+import { NotFoundComponent } from './not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonModule } from '../../common/button/button.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: SummaryComponent
+    component: NotFoundComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    SummaryComponent
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -21,4 +21,4 @@ const routes: Routes = [
     ButtonModule
   ]
 })
-export class SummaryModule { }
+export class NotFoundModule { }
