@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instruction install
 
-Run `npm install` to install the dependencies.
+Run `npm install --force` to install the dependencies.
 
 ## Development server
 Go to the workspace directory and launch the application. `cd my-store`
