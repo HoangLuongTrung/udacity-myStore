@@ -1,12 +1,5 @@
 # MyStore
 My Store is my final angular project. It presents a list of product which can be added, calculate cart total in cart, show detail of project.
-Some functions you can perform
-- View list product,
-- Add products to cart.
-- View products in cart.
-- Delete product from cart.
-- Checkout products in cart.
-- Calculate cart total in cart.
 
 ## Instruction install
 
