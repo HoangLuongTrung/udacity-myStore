@@ -20,7 +20,8 @@
     "@angular/router": "~13.3.0",
     "@ng-bootstrap/ng-bootstrap": "^14.1.1",
     "bootstrap": "^5.2.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "zone.js": "^0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.1",
