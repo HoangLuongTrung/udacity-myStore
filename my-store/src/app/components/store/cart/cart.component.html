@@ -1,7 +1,7 @@
 <div class="cart row">
   <div class="cart__selected col-6">
     <div class="my-2" *ngFor="let product of listProduct">
-      <app-product-added [product]="product" (valueChange)="onChange($event, product)"></app-product-added>
+      <app-product-added [product]="product" (valueChange)="onChange($event, product)" (deleteProduct)="onDeleteProduct($event)"></app-product-added>
     </div>
     <div class="row">
       <div class="col-6"></div>

@@ -42,9 +42,21 @@ export class CartComponent implements OnInit {
     this.productService.listProduct = [];
   }
 
-  onChange(value: string | number, product: Product) {
+  onChange(value: string | number, product: Product): void {
     product.quantity = +value;
     this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price) * cur.quantity, 0)
+  }
+
+  onDeleteProduct(value: string | number): void {
+    const listProduct = _.cloneDeep(this.listProduct)
+    const index = listProduct.findIndex(x => x.id === +value);
+
+    listProduct.splice(index, 1);
+    if (listProduct.length === 0) {
+      this.router.navigateByUrl('store/not-found');
+    }
+    this.listProduct = listProduct;
+    this.productService.listProduct = listProduct;
   }
 
   isValid(): boolean {

@@ -9,6 +9,7 @@ import { Product } from 'src/app/models/product.model';
 export class ProductAddedComponent implements OnInit {
   @Input() product: Product;
   @Output() valueChange = new EventEmitter<string | number>();
+  @Output() deleteProduct = new EventEmitter<string | number>();
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +17,9 @@ export class ProductAddedComponent implements OnInit {
 
   onChange(value: string | number) {
     this.valueChange.emit(value);
+  }
+
+  onDelete(value: string | number) {
+    this.deleteProduct.emit(value);
   }
 }

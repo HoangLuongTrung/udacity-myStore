@@ -1,4 +1,7 @@
 <div class="product-added row">
+  <div class="product-added__delete">
+    <img src="../../../../assets/img/delete.png" (click)="onDelete(product.id)">
+  </div>
   <div class="product-added__image col-6">
     <img src={{product?.image}}>
   </div>
