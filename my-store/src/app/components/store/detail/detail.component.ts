@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { log } from 'console';
+import { ToastrService } from 'ngx-toastr';
 import { NumberOrder } from 'src/app/constants/common.constants';
 import { Product, Selectbox } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -14,7 +15,7 @@ export class DetailComponent implements OnInit {
   listOptions: Selectbox[] = NumberOrder;
   id = 0;
   product: Product;
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router, private toastr: ToastrService) {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id && +id > 0) {
       this.id = +id;
@@ -32,7 +33,7 @@ export class DetailComponent implements OnInit {
 
   onAddToCart() {
     this.productService.productAddedToCart(this.product);
-    alert('Added to cart success!');
+    this.toastr.success('Added to cart success!', 'Inform!');
   }
 
   onChange(value: number) {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import _ from "lodash";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,7 @@ export class CartComponent implements OnInit {
   address = '';
   cardCredit = '';
   isSubmit = false;
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(private router: Router, private productService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.productService.listProduct.length === 0) {
@@ -39,12 +40,14 @@ export class CartComponent implements OnInit {
       total: this.total,
       fullName: this.fullName
     });
+    this.toastr.success('Order success!', 'Inform!');
     this.productService.listProduct = [];
   }
 
   onChange(value: string | number, product: Product): void {
     product.quantity = +value;
     this.total = this.listProduct.reduce((acc, cur) => acc + (+cur.price) * cur.quantity, 0)
+    this.toastr.success('Quantity of product change!', 'Inform!');
   }
 
   onDeleteProduct(value: string | number): void {
@@ -57,6 +60,7 @@ export class CartComponent implements OnInit {
     }
     this.listProduct = listProduct;
     this.productService.listProduct = listProduct;
+    this.toastr.success('Remove Product success!', 'Inform!');
   }
 
   isValid(): boolean {
@@ -78,6 +82,4 @@ export class CartComponent implements OnInit {
     }, [])
     return data;
   }
-
-
 }
